@@ -24,8 +24,8 @@ class HouseInfo:
 
     def get_data_by_date(self, field, rec_date = date.today()):
         '''
-        Traverses the data dictionary and returns values of a key specified in the function arg,
-        corresponding to the date specified in the args
+        Traverses the data dictionary and returns values of a key specified 
+        in the function arg, corresponding to the date specified in the args
         '''
         field_data = []
         for record in self.data:
