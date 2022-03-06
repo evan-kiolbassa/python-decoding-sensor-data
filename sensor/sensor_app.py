@@ -8,6 +8,7 @@ from datetime import date, datetime
 # Do not remove these two lines
 # They are needed to validate your unittest
 data = []
+print("Sensor Data App")
 data = load_sensor_data()
 print("Sensor Data App")
 print("Loaded records: {}".format(len(data)))
