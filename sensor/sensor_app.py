@@ -9,10 +9,10 @@ from datetime import date, datetime
 # They are needed to validate your unittest
 data = []
 print("Sensor Data App")
-data = load_sensor_data()
-print("Sensor Data App")
-print("Loaded records: {}".format(len(data)))
 ##############################
+
+data = load_sensor_data()
+print("Loaded records: {}".format(len(data)))
 
 house_info = HouseInfo(data)
 
