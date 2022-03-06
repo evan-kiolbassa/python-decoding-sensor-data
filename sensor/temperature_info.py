@@ -6,7 +6,8 @@ class TemperatureData(HouseInfo):
     def _convert_data(self, data):
         recs = []
         for rec in data:
-            rec = list(map(lambda x: int(x, base = 10)))
+            # Convert string of integers into integers based 10
+            recs.append(int(rec, base=10))
         return recs
     
     def get_data_by_area(self, rec_area=0):
@@ -18,6 +19,5 @@ class TemperatureData(HouseInfo):
         return self._convert_data(recs)
 
     def get_data_by_date(self, rec_date = date.today()):
-        recs = super().get_area_by_date('temperature', rec_date)
-        return self._convert_data()
-    pass
+        recs = super().get_data_by_date('temperature', rec_date)
+        return self._convert_data(recs)
