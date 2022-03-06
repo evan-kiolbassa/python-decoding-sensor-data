@@ -1,3 +1,5 @@
+from datetime import date, datetime
+
 class HouseInfo:
 
     def __init__(self, data):
@@ -11,7 +13,6 @@ class HouseInfo:
         dictionary key where the area boolean is True to an array.
         The method then return the array
         '''
-        
         if rec_area is None:
             rec_area = 0
         field_data = []
@@ -20,6 +21,20 @@ class HouseInfo:
             if rec_area == 0:
                 field_data.append(record[field])
             elif rec_area == int(record['area']):
+                field_data.append(record[field])
+        return field_data
+
+    def get_data_by_date(self, field, rec_date):
+        '''
+        Traverses the data dictionary and returns values of a key specified in the function arg,
+        corresponding to the date specified in the args
+        '''
+        if rec_date is None:
+            rec_date = date.today()
+            rec_date = datetime.strftime(rec_date,'%m/%d/%y')
+        field_data = []
+        for record in self.data:
+            if record['date'] == rec_date:
                 field_data.append(record[field])
         return field_data
 
