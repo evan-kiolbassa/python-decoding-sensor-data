@@ -3,11 +3,11 @@ from datetime import date
 
 
 class HumidityData(HouseInfo):
-    def _convert_data(self,data):
+    def _convert_data(self, data):
         recs = []
         for rec in data:
-            rec = float(rec) * 100
-            recs.append(rec)
+            # Convert string of integers into actual integers based 10
+            recs.append(float(rec) * 100)
         return recs
 
     def get_data_by_area(self, rec_area=0):

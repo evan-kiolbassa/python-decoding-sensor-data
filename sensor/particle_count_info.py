@@ -2,11 +2,11 @@ from house_info import HouseInfo
 from datetime import date
 
 class ParticleData(HouseInfo):
-    def _convert_data(self,data):
+    def _convert_data(self, data):
         recs = []
         for rec in data:
-            rec = float(rec)
-            recs.append(rec)
+            # Convert string of integers into actual integers based 10
+            recs.append(float(rec))
         return recs
 
     def get_data_by_area(self, rec_area=0):
