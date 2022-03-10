@@ -54,7 +54,7 @@ recs = particle_data.get_data_by_area(rec_area = test_area)
 
 print("\nHouse Particle sensor records for area {} = {}".format(test_area, len(recs)))
 
-concentrations = particle_data.get_data_concentrations(date = recs)
+concentrations = particle_data.get_data_concentrations(data = recs)
 
 print("\tGood Air Quality Recs: {}".format(concentrations["good"]))
 print("\tModerate Air Quality Recs: {}".format(concentrations["moderate"]))
